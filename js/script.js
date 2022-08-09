@@ -34,5 +34,14 @@ li.on("dblclick", function crossOut() {  //adding event handler click, triggers 
             li.addClass("delete"); //takes the style from css on how it deletes
         }
 
-        $('#list').sortable();
-}
+        
+        $('#list').sortable(); //method to reorder elements in list or grid using the mouse
+    }
+    
+    $('#input').keypress(function(e) { //adding a keypress function (e) is event
+        if(e.which == 13) { //(e.which) is the property of of the event object, 13 is the numerical value for the enter key
+            $('#button').click(); //when pressing the enter key it will act as a mouse click on the button element to add an item to the list
+            event.preventDefault(); //cancels the default setting that makes the enter key completely refresh the page each time it is pressed
+        }
+    });
+    
